@@ -1,6 +1,6 @@
 import "./basket.css";
 
-function Baskets({ basketsCount, getCurrentBasket, basketsData }) {
+function Baskets({ basketsCount, getCurrentBasket, basketsData, getFromBasket }) {
     console.log("basketsData = ", basketsData);
 
   function dragStartHandler(e) {
@@ -38,6 +38,9 @@ function Baskets({ basketsCount, getCurrentBasket, basketsData }) {
                 onDragOver={(e) => dragOverHandler(e)}
                 onDrop={(e) => dropHandler(e)}
                 draggable={true}
+                onClick={(e)=>{
+                    getFromBasket(e.target.innerText)
+                }}
               >
                 <span>{el}</span>
                 {/* <div className="basket-img">{
