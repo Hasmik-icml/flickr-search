@@ -50,11 +50,17 @@ function Pics({ picsResult, basketsCount, currentBasket, getBasketsData}) {
                 bs.basketItems.push(p);
             }
         })
+
+        setImages(images.filter(img =>{
+            return img.id !== currentImage.id;
+        }))
+        
       } else {
         console.log("bay");
       }
     }
     getBasketsData(updtBaskets);
+    
   }
 
   function dragOverHandler(e) {
@@ -105,6 +111,7 @@ function Pics({ picsResult, basketsCount, currentBasket, getBasketsData}) {
         images.length > 0 &&
         images.map((p) => {
           //   console.log(p);
+          
           return (
             <img
               id={p.id}

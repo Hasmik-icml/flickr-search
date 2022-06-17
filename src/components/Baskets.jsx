@@ -40,7 +40,7 @@ function Baskets({ basketsCount, getCurrentBasket, basketsData }) {
                 draggable={true}
               >
                 <span>{el}</span>
-                <div className="basket-img">{
+                {/* <div className="basket-img">{
                     ( basketsData && basketsData.length > 0) && basketsData.map(d =>{
                     if (d.basketTitle === el) {
                         return  d.basketItems.map(data =>{
@@ -48,7 +48,8 @@ function Baskets({ basketsCount, getCurrentBasket, basketsData }) {
                         })
                     }
                 })
-                }</div>
+                }
+                </div> */}
               </div>
             );
           })
