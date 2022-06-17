@@ -1,7 +1,8 @@
 import "./basket.css";
 
-function Baskets({ basketsCount, getCurrentBasket }) {
-    
+function Baskets({ basketsCount, getCurrentBasket, basketsData }) {
+    console.log("basketsData = ", basketsData);
+
   function dragStartHandler(e) {
     e.target.style.border = "thick solid yellow";
   }
@@ -25,8 +26,9 @@ function Baskets({ basketsCount, getCurrentBasket }) {
   }
   return (
     <div className="allBaskets">
+
       {basketsCount && basketsCount.length > 0
-        ? basketsCount.map((el) => {
+        && basketsCount.map((el) => {
             return (
               <div
                 className="basket"
@@ -38,10 +40,19 @@ function Baskets({ basketsCount, getCurrentBasket }) {
                 draggable={true}
               >
                 <span>{el}</span>
+                <div className="basket-img">{
+                    ( basketsData && basketsData.length > 0) && basketsData.map(d =>{
+                    if (d.basketTitle === el) {
+                        return  d.basketItems.map(data =>{
+                            return <img className="basket-images" src={data.path}/>
+                        })
+                    }
+                })
+                }</div>
               </div>
             );
           })
-        : ""}
+        }
     </div>
   );
 }

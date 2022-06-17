@@ -21,10 +21,6 @@ function Pics({ picsResult, basketsCount, currentBasket, getBasketsData}) {
   console.log("currentBasket=", currentBasket);
   console.log("basketsCount=", basketsCount);
 
-//   useEffect(() => {
-//     setUpdatedBasket(updatedBaskets);
-//   }, []);
-
   function dragStartHandler(e, p) {
     e.target.style.border = "thick solid yellow";
     setCurretnImage({
