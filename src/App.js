@@ -16,7 +16,6 @@ async function showPics(words){
   words && words.length > 0 && console.log(words.length);
   let pics ;
   if (words && words.length > 0){
-   
        pics = await Promise.all(
         words.map(w => {
           return getPictures(w);
@@ -45,7 +44,7 @@ useEffect(()=>{
           showPics();
         }}/>
         <Pics picsResult={picsResult}/>
-        <Baskets />
+        <Baskets basketsCount={words}/>
         <FilteredPics />
     </>
   )

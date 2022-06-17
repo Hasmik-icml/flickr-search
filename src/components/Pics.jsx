@@ -14,7 +14,7 @@ useEffect(()=>{
     let res = [];
     if (picsResult && picsResult.length > 0 ){
         picsResult.forEach(el => {
-            return el.photos.photo.forEach(pic => {
+            return el.photos && el.photos.photo.length > 0 && el.photos.photo.forEach(pic => {
                 console.log(pic);
                 res.push('https://live.staticflickr.com/' + pic.server + '/' + pic.id + '_' + pic.secret + '.jpg');
             })

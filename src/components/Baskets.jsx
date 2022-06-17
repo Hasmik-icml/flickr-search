@@ -1,9 +1,13 @@
+import "./basket.css"
 
-function Baskets(){
-
+function Baskets({basketsCount}){
     return (
-        <div>
-            This is baskets block
+        
+        <div className="allBaskets">
+           {basketsCount && basketsCount.length > 0 ? basketsCount.map( el =>{
+            return <div className="basket"><span>{el}</span></div>
+           }):""
+        }
         </div>
     )
 }

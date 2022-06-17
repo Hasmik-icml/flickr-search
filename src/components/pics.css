@@ -1,3 +1,14 @@
 .images{
     width: 100px;
+    height: 100px;
+}
+.picsblock{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 1px dashed blue;
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }

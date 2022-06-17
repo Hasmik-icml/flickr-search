@@ -1,12 +1,13 @@
 import React from "react";
 import { useState } from "react";
+import "./search.css";
 
 function Search({onSearch}) {
   const [text, setText] = useState("");
  
 
   return (
-    <div>
+    <div className="searchDiv">
       <form 
        onSubmit={(e) => {
         e.preventDefault();
@@ -22,7 +23,7 @@ function Search({onSearch}) {
             setText(e.target.value);
           }}
         ></input>
-        <button>Search</button>
+        <button className="searchBtn">Search</button>
       </form>
     </div>
   );

@@ -1,0 +1,20 @@
+.basket{
+    width: 25%;
+    height: 50px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    background-color: rgb(77, 188, 207);
+    margin-right: 5px;
+    text-align: center;
+}
+.basket > span{
+    line-height: 50px;
+}
+.allBaskets{
+    display: flex;
+    width: 100%;
+    background-color: aqua;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-wrap: wrap;
+}

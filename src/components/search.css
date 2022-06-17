@@ -1,0 +1,14 @@
+.searchDiv{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.searchInput{
+    width: 80%;
+    margin-right: 10px;
+    border-color: grey;
+    padding: 5px;
+}
+.searchBtn{
+    height: 30px;
+    width: 80px;
+}
