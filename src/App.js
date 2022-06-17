@@ -9,27 +9,42 @@ import { getPictures } from "./Services/api.js";
 
 function App() {
 const [searchText, setSearchText] = useState("");
-const [words, setWords] = useState("");
+const [words, setWords] = useState([]);
+const [picsResult, setPicsResult] = useState([]);
 
-async function showPics(){
-  const pics = await getPictures(words)
-  console.log(pics);
+async function showPics(words){
+  words && words.length > 0 && console.log(words.length);
+  let pics ;
+  if (words && words.length > 0){
+   
+       pics = await Promise.all(
+        words.map(w => {
+          return getPictures(w);
+        })
+      )
+      setPicsResult(pics);
+  }
+console.log(picsResult);
 }
+
 useEffect(()=>{
-  const searchingWords = searchText.split(" ").join("+");
+  const searchingWords = searchText.split(" ");
   setWords(searchingWords);
+  console.log(words);
 },[searchText]);
+
 
 useEffect(()=>{
  if (words.length > 0) showPics(words);
 },[words]);
+
   return (
     <>
         <Search onSearch={(text)=>{
           setSearchText(text)
-          console.log(text);
+          showPics();
         }}/>
-        <Pics />
+        <Pics picsResult={picsResult}/>
         <Baskets />
         <FilteredPics />
     </>
