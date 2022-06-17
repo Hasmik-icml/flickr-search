@@ -11,7 +11,7 @@ function App() {
 const [searchText, setSearchText] = useState("");
 const [words, setWords] = useState([]);
 const [picsResult, setPicsResult] = useState([]);
-const [currentBasket, setCurrentBasket] = useState("");
+const [currentBasket, setCurrentBasket] = useState(null);
 
 async function showPics(words){
   words && words.length > 0 && console.log(words.length);

@@ -1,6 +1,7 @@
 import "./basket.css";
 
 function Baskets({ basketsCount, getCurrentBasket }) {
+    
   function dragStartHandler(e) {
     e.target.style.border = "thick solid yellow";
   }
@@ -19,7 +20,7 @@ function Baskets({ basketsCount, getCurrentBasket }) {
 
   function dropHandler(e) {
     e.preventDefault();
-    console.log(e.target.innerText);
+    // console.log(e.target.innerText);
     getCurrentBasket(e.target.innerText)
   }
   return (
