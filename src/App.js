@@ -11,6 +11,7 @@ function App() {
 const [searchText, setSearchText] = useState("");
 const [words, setWords] = useState([]);
 const [picsResult, setPicsResult] = useState([]);
+const [currentBasket, setCurrentBasket] = useState("");
 
 async function showPics(words){
   words && words.length > 0 && console.log(words.length);
@@ -25,7 +26,9 @@ async function showPics(words){
   }
 console.log(picsResult);
 }
-
+function getCurrentBasket(basketName){
+  setCurrentBasket(basketName);
+}
 useEffect(()=>{
   const searchingWords = searchText.split(" ");
   setWords(searchingWords);
@@ -43,8 +46,8 @@ useEffect(()=>{
           setSearchText(text)
           showPics();
         }}/>
-        <Pics picsResult={picsResult} basketsCount={words}/>
-        <Baskets basketsCount={words}/>
+        <Pics picsResult={picsResult} basketsCount={words} currentBasket={currentBasket}/>
+        <Baskets basketsCount={words} getCurrentBasket={getCurrentBasket}/>
         <FilteredPics />
     </>
   )

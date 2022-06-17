@@ -2,20 +2,23 @@ import { useState, useEffect } from "react";
 import "./pics.css";
 import { nanoid } from "nanoid";
 
-function Pics({ picsResult, basketsCount }) {
+function Pics({ picsResult, basketsCount, currentBasket }) {
   const [images, setImages] = useState([]);
   const [currentImage, setCurretnImage] = useState(null);
 
   console.log(picsResult);
   console.log(basketsCount);
+  console.log(currentBasket);
   
 function dragStartHandler(e, p){
-    console.log(e.target.id, "---", p);
+    // console.log(e.target.id, "---", p.title);
     e.target.style.border = "thick solid yellow"
     setCurretnImage({
-        id:e. target.id,
-        path: p
+        id: e.target.id,
+        title: p.title,
+        path: p.path
     })
+    console.log(currentImage);
 }
 
 function dragLeaveHandler(e){
@@ -72,7 +75,7 @@ function dropHandler(e){
       {images &&
         images.length > 0 &&
         images.map((p) => {
-          console.log(p);
+        //   console.log(p);
           return <img  
           id={p.id}
           onDragStart={(e, id)=> dragStartHandler(e, p)}
