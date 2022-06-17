@@ -43,7 +43,7 @@ useEffect(()=>{
           setSearchText(text)
           showPics();
         }}/>
-        <Pics picsResult={picsResult}/>
+        <Pics picsResult={picsResult} basketsCount={words}/>
         <Baskets basketsCount={words}/>
         <FilteredPics />
     </>
