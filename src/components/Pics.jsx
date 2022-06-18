@@ -15,7 +15,6 @@ function Pics({ picsResult, basketsCount, currentBasket, getBasketsData }) {
       title: p.title,
       path: p.path,
     });
-    currentImage && console.log(currentImage.title);
   }
 
   function dragLeaveHandler(e) {
@@ -25,10 +24,10 @@ function Pics({ picsResult, basketsCount, currentBasket, getBasketsData }) {
   function dragEndHandler(e, p) {
     e.preventDefault();
     e.target.style.border = "none";
-
+    {images.length === 1 && alert("All pictures are sorted !")}
     if (currentImage) {
       if (currentBasket === currentImage.title) {
-        console.log("hi");
+
         // debugger;
         updtBaskets.forEach((bs) => {
           if (bs.basketTitle === currentImage.title) {
@@ -41,11 +40,11 @@ function Pics({ picsResult, basketsCount, currentBasket, getBasketsData }) {
             return img.id !== currentImage.id;
           })
         );
-      } else {
-        console.log("bay");
-      }
+        
+      } 
     }
     getBasketsData(updtBaskets);
+    
   }
   useEffect(() => {
     let updatedBaskets = [];
@@ -87,12 +86,14 @@ function Pics({ picsResult, basketsCount, currentBasket, getBasketsData }) {
 
   return (
     <div className="picsblock">
+      
       {images &&
         images.length > 0 &&
         images.map((p) => {
           return (
             <img
               id={p.id}
+              key={p.id}
               onDragStart={(e) => dragStartHandler(e, p)}
               onDragLeave={(e) => dragLeaveHandler(e)}
               onDragEnd={(e) => dragEndHandler(e, p)}

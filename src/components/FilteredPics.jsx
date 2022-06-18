@@ -14,7 +14,7 @@ function FilteredPics({ fromBasket, basketsData }) {
         basketData.map((bsData) => {
           if (bsData.basketTitle === fromBasket) {
             return bsData.basketItems.map((bImg) => {
-              return <img className="bImg" src={bImg.path} />;
+              return <img key={bImg.id} className="bImg" src={bImg.path} />;
             });
           }
         })}

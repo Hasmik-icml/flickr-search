@@ -21,9 +21,10 @@ function Baskets({
       {basketsCount[0] !== "" &&
         basketsCount &&
         basketsCount.length > 0 &&
-        basketsCount.map((el) => {
+        basketsCount.map((el,index) => {
           return (
             <div
+              key={index}
               className="basket"
               onDragOver={(e) => dragOverHandler(e)}
               onDrop={(e) => dropHandler(e)}
