@@ -16,7 +16,7 @@ const [basketsData, setBasketsData] = useState("");
 const [fromBasket, setFromBasket] = useState("");
 
 async function showPics(words){
-  words && words.length > 0 && console.log(words.length);
+ 
   let pics ;
   if (words && words.length > 0){
        pics = await Promise.all(
@@ -26,7 +26,6 @@ async function showPics(words){
       )
       setPicsResult(pics);
   }
-console.log(picsResult);
 }
 
 function getCurrentBasket(basketName){
@@ -39,12 +38,11 @@ function getBasketsData(basketData){
 
 function getFromBasket(text){
   setFromBasket(text);
-  console.log(text);
 }
+
 useEffect(()=>{
   const searchingWords = searchText.split(" ");
   setWords(searchingWords);
-  console.log(words);
 },[searchText]);
 
 

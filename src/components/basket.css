@@ -1,33 +1,35 @@
-.basket{
+.basket {
     position: relative;
     width: 25%;
     height: 50px;
-    border: 1px solid blue;
+    margin: 2px;
     border-radius: 5px;
     background-color: rgb(77, 188, 207);
     margin-right: 5px;
     text-align: center;
 }
-.basket > span{
+
+.basket>span {
     line-height: 50px;
+    font-size: 25px;
+    color: white;
 }
-/* .basket > span > img{
-    width: 20px;
-    height: 20px;
-} */
-.allBaskets{
+
+.allBaskets {
     display: flex;
     width: 100%;
-    background-color: aqua;
-    justify-content: space-around;
+    border: 1px dashed #4dbccf;
+    justify-content: space-evenly;
     align-content: space-around;
     flex-wrap: wrap;
 }
-.basket-images{
+
+.basket-images {
     width: 20px;
     height: 20px;
 }
-.basket-img{
+
+.basket-img {
     position: absolute;
     top: 20px;
 }

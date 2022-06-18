@@ -2,24 +2,23 @@ import React from "react";
 import { useState } from "react";
 import "./search.css";
 
-function Search({onSearch}) {
+function Search({ onSearch }) {
   const [text, setText] = useState("");
- 
 
   return (
     <div className="searchDiv">
-      <form 
-       onSubmit={(e) => {
-        e.preventDefault();
-        onSearch(text)
-      }}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          onSearch(text);
+        }}
       >
         <input
           type="text"
           value={text}
           className="searchInput"
           placeholder="photos"
-          onChange={(e)=>{
+          onChange={(e) => {
             setText(e.target.value);
           }}
         ></input>
@@ -28,4 +27,5 @@ function Search({onSearch}) {
     </div>
   );
 }
+
 export default Search;
